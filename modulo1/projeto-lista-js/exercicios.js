@@ -100,33 +100,46 @@ function checaStringsMesmoTamanho(string1, string2) {
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
-
+    
+  return array[0]
  
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
-
+  return array[array.length -1]
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
 
+ 
+  console.log(array)
+  return array
 }
+
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
 
-  let comparacao = string1 == string2
+  let comparacao = string1.toUpperCase() === string2.toUpperCase()
   return comparacao
 }
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
+  let anoAtual = Number(prompt("Digite o ano atual"))
+  let anoDeNasc = Number(prompt("Digite o ano de Nascimento"))
+  let anoRG = Number(prompt("Digite o ano do RG"))
+  let idade = anoAtual - anoDeNasc
+  let comparacao = idade <=20
+
+ 
+  
 
 }
 
