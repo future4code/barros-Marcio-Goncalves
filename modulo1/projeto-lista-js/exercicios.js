@@ -114,9 +114,12 @@ function retornaUltimoElemento(array) {
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
-
- 
-  console.log(array)
+  array.unshift(array[array.length -1 ])
+  array.pop()
+  let armazenar = array[1]
+  array.push(armazenar)
+  array.splice(1,1)
+  
   return array
 }
 
