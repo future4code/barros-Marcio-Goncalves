@@ -139,7 +139,7 @@ function checaRenovacaoRG() {
   let anoDeNasc = Number(prompt("Digite o ano de Nascimento"))
   let anoRG = Number(prompt("Digite o ano do RG"))
   let idade = anoAtual - anoDeNasc
-  let comparacao = idade <=20
+  let comparacao = idade <= 20
 
  
   
