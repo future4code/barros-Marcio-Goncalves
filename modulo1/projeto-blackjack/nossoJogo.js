@@ -44,78 +44,81 @@
 
    // let pergunta = confirm("Deseja iniciar uma nova rodada?")
 
-    let usuario = []            // Objeto
-    let valUsuarios = []        // valor das cartas
-    const blackjack = 21       // soma do valor das cartas
-    usuario.unshift(comprarCarta())
-    usuario.unshift(comprarCarta())
-    let numUsuario1 = usuario[0].valor
-    let numUsuario2 = usuario[1].valor
-    valUsuarios.unshift(numUsuario1)
-    valUsuarios.unshift(numUsuario2)
+//     let usuario = []            // Objeto
+//     let valUsuarios = []        // valor das cartas
+//     const blackjack = 21       // soma do valor das cartas
+//     usuario.unshift(comprarCarta())
+//     usuario.unshift(comprarCarta())
+//     let numUsuario1 = usuario[0].valor
+//     let numUsuario2 = usuario[1].valor
+//     valUsuarios.unshift(numUsuario1)
+//     valUsuarios.unshift(numUsuario2)
+//     let usuarioSoma = usuario[0].valor + usuario[1].valor
+
+//     let computador = []            // Objeto
+//     let valComputador = []        // valor das cartas       // soma do valor das cartas
+//     computador.unshift(comprarCarta())
+//     computador.unshift(comprarCarta())
+//     let numComputador1 = computador[0].valor
+//     let numComputador2 = computador[1].valor
+//     valComputador.unshift(numComputador1)
+//     valComputador.unshift(numComputador2)
+//     let computadorSoma = computador[0].valor + computador[1].valor
    
-    let usuarioSoma = usuario[0].valor + usuario[1].valor
-    console.log(usuario);
-    console.log(usuarioSoma);
-
-    let computador = []            // Objeto
-    let valComputador = []        // valor das cartas       // soma do valor das cartas
-    computador.unshift(comprarCarta())
-    computador.unshift(comprarCarta())
-    let numComputador1 = computador[0].valor
-    let numComputador2 = computador[1].valor
-    valComputador.unshift(numComputador1)
-    valComputador.unshift(numComputador2)
+//    let perg = confirm(`                           Bem vindo ao Blackjack...
    
-    let computadorSoma = computador[0].valor + computador[1].valor
-    console.log(computador);
-    console.log(computadorSoma);
+//                            Deseja iniciar o jogo?`)
+
+//    if (perg === true) {
+      
+//          const jogadaUsuario = ()=>{
+//          usuario.unshift(comprarCarta())
+//          usuarioSoma += usuario[0].valor
+       
+//    }
+
+//    while (usuarioSoma < blackjack) {
+//       let pergUsuario = confirm(`                          Sua pontuação é: ${usuarioSoma}, 
+
+//                           Deseja comprar outra carta?`)
+//       if (pergUsuario === true) {
+//          jogadaUsuario()
+//       } else { break}
+      
+//    }  
+
+//    alert("Jogada do Computador")  
 
 
-   let perg = confirm("Iniciar o jogo?")
+//    const jogadaComputador = ()=>{
+
+//       computador.unshift(comprarCarta())
+//       computadorSoma += computador[0].valor
+      
+
+//    }
+
+//    if (computadorSoma < blackjack && computadorSoma < usuarioSoma) {
+//       while (computadorSoma < blackjack) {
+//          jogadaComputador()
+//       }
+//    } else{
+//       while(1==1){
+//          break
+//       }
+//    }
+
+// }
   
-   if(perg === true){
-    
-   while(usuarioSoma < blackjack){
-  let perg1 = confirm(`Sua pontuação atual é: ${usuarioSoma} 
-Deseja comprar mais uma carta?`)
-     if (perg1 === true) {
-      usuario.unshift(comprarCarta())
-      console.log(usuario);
-      usuarioSoma += usuario[0].valor
-      console.log(usuarioSoma);
-     } // fecha o if da pergunta1
-     else{
-        alert("retornado")
-        break
-      }
- } // fecha o while usuario
+//       if(usuarioSoma > blackjack){
+//          alert(`Usuario perdeu`);
+//       } else if(computadorSoma > blackjack && computadorSoma < usuarioSoma){
+//          alert(`Usuario ganhou`);
+//       } else if( computadorSoma == usuarioSoma){
+//          alert(`Empate`);
+//       } else if(perg === false){
+//          alert(`Voce perdeu por desistencia`);
+//       }
+   
 
-   while(computadorSoma < usuarioSoma){
-      alert("comprado")
-      usuario.unshift(comprarCarta())
-      computadorSoma += computador[0].valor
-      console.log(computadorSoma);
-   }
-
-   if (usuarioSoma > computadorSoma) {
-      alert("Voce ganhou")
-   }
-
-   else if( computadorSoma > usuarioSoma && computadorSoma <= blackjack){
-      alert("Computador Ganhou")
-   }
-   else if(computadorSoma > blackjack){
-      alert("Usuario venceu")
-   }
-
-} // fecha o if da pergunta inicio do jogo
-else{
-  
-   location.reload()
-}// fecha a pergunta de inicio do jogo 
-
-
-
-
-    
+   
