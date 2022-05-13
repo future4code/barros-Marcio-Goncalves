@@ -54,58 +54,68 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-// if (num1 > num2) {
-//     maiorNumero = num1
-//     menorNumero = num2
-// } else if( num2 > num1){
-//     maiorNumero = num2
-//     menorNumero = num1
-// } else if(num1 === num2){
-//     maiorNumero = num1
-//     menorNumero = num2
-// }
+  let divisivel
+if (num1 > num2) {
+    maiorNumero = num1
+    menorNumero = num2
+} else if( num2 > num1){
+    maiorNumero = num2
+    menorNumero = num1
+} else if(num1 === num2){
+    maiorNumero = num1
+    menorNumero = num2
+}
+maiorNumber = maiorNumero // backup do maior numero...
+menorNumber = menorNumero // backup do menor numero...
+divisivel = maiorNumero %= menorNumero;
 
-// if(maiorNumero %= menorNumero === 0){
-
-// }
-
-//   return newObject = {
-//     "maiorNumero":maiorNumero,
-//   //  "maiorDivisivelPorMenor":maiorDivisivelPorMenor,
-//     // "diferenca":diferenca
-//   }
+if (divisivel === 0) {
+  divisivel = true
+} else {
+  divisivel = false
 }
 
+diferenca = maiorNumber - menorNumber
+  return newObject = {
+    "maiorNumero":maiorNumber,
+   "maiorDivisivelPorMenor":divisivel,
+    "diferenca":diferenca
+  }
+}
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+ 
+let numero = n * 2
+let pares = []
+  for(let i=0;i<numero; i++){
+    if (i %2 == 0) {
+      pares.push(i)
+    }
+    console.log(pares);
+  }	
+  return pares
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-  // let escaleno = "Escaleno"
-  // let isoceles = "Isósceles"
-  // let equilatero = "Equilátero"
-
-  // if(ladoA != ladoB && ladoB != ladoC && ladoC != ladoA){
-  //   return escaleno
-  // } else if((ladoA && ladoB === ladoC) || (ladoB && ladoC === ladoA)){
-  //     return equilatero
-  // } else if(ladoA || ladoB === ladoC || ladoB || ladoC === ladoA || ladoC || ladoA === ladoB){
-  //   return isoceles
-  // }
+  if((ladoA !== ladoB && ladoA !== ladoC) && (ladoB !== ladoC && ladoB !== ladoA) && (ladoC !== ladoB && ladoC !== ladoA)){
+    return("Escaleno")
+   }  else if((ladoA === ladoB && ladoA === ladoC)||(ladoB === ladoC && ladoB === ladoA)||(ladoC === ladoA && ladoC === ladoB)){
+    return("Equilátero")
+  }   else if((ladoA === ladoB || ladoC)||(ladoB === ladoC || ladoA)||(ladoC === ladoA || ladoB)){
+    return "Isósceles"
+  }
 }
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+  console.log(array.sort((a, b ) => a - b ));
+  return [array[array.length -2],  array[1]]
 }
-
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   let chamada = `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}.`
-   console.log(chamada);
-   return chamada
+   return `Venha assistir ao filme ${filme.nome}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}`
+  
 }
 
 // EXERCÍCIO 12
@@ -115,30 +125,59 @@ function retornaPessoaAnonimizada(pessoa) {
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
+  let pessoasAutorizadas = []
   for(i=0;i<pessoas.length;i++){
 
     if(pessoas[i].altura >= 1.5 && pessoas[i].idade > 14 && pessoas[i].idade < 60) {
+      pessoasAutorizadas.push(pessoas[i])
       console.log(pessoas[i]);
     }
   }
+  return pessoasAutorizadas
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+  let pessoasNaoAutorizadas = []
+  for(i=0;i<pessoas.length;i++){
+
+    if((pessoas[i].idade < 15 || pessoas[i].idade > 60) || (pessoas[i].altura < 1.5) ) {
+      pessoasNaoAutorizadas.push(pessoas[i])
+      console.log(pessoas[i]);
+    }
+  }
+  return pessoasNaoAutorizadas
 }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
+  const saldo = contas.map((conta)=>{
+    
+    let soma = 0
+    for(let i=0;i<conta.compras.length;i++){
+       soma += conta.compras[i]
+    }
+    resultado = conta.saldoTotal - soma
+    return { ...conta, saldoTotal:resultado, compras:[]}
+})
+  return saldo
 
 }
-
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+  const ordenarNome = consultas.sort((a,b)=>{
+   return a.nome.localeCompare(b.nome)
+  })
+  return ordenarNome
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
    
-}
+  const ordenarData = consultas.sort((a,b)=>{
+    return a.dataDaConsulta.localeCompare(b.dataDaConsulta)
+   })
+   console.log(ordenarData);
+   return ordenarData
+ }
+
