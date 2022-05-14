@@ -160,7 +160,7 @@ function retornaContasComSaldoAtualizado(contas) {
     resultado = conta.saldoTotal - soma
     return { ...conta, saldoTotal:resultado, compras:[]}
 })
-  return saldo
+  return saldo 
 
 }
 // EXERCÍCIO 15A
