@@ -4,68 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./ctrl-estoque.css">
     <title>Controle de Estoque---XiamiStore</title>
 </head>
 <body>
     <header>
-        <p>XiamiStore</p>
+        <div class="logo"><a href="./index.html"><img src="./img/xiaomi.png" alt="xiaomi logo" width="50" height="50"></a></div>
+        <nav class="navigation">
+            
+            <a href="./ctrl-estoque.html">Controle de Estoque</a>
+            <a href="./add-produto.html">Adicionar Produto</a>
+            <a href="./funcionarios.html">Funcionários</a>
+            <a href="./vendas.html">Vendas</a>
+        </nav>
     </header>
-    
-    <nav>
-        <a href="./index.html">Página Inicial |</a>
-        <a href="./ctrl-estoque.html">Controle de Estoque |</a>
-        <a href="./add-produto.html">Adicionar Produto |</a>
-        <a href="./funcionarios.html">Funcionários</a>
-    </nav>
+    <main class="container">
+        <h2>Controle de Estoque</h2>
+        <table class="tabela" border="1">
+            <tr>
+                <th>Foto</th>
+                <th>Descrição</th>
+                <th>Preço (R$)</th>
+                <th>Quantidade disponível</th>
+            </tr>
 
-    <h2>Controle de Estoque</h2>
+            <tr>
+                <td><img src="./img/MI-11.jpg" alt="MI-11" width="120" height="200"/></td>
+                <td> Xiaomi MI 11 </td>
+                <td> 2300 </td>
+                <td> 10 </td>
+            </tr>
 
-    <table>
-        <tr>
-            <th>Foto</th>
-            <th>Descrição</th>
-            <th>Preço (R$)</th>
-            <th>Quantidade disponível</th>
-        </tr>
+            <tr>
+                <td><img src="./img/poco x3 pro.jpg" alt="poco x3 pro" width="120" height="200"/></td>
+                <td> Xiaomi Poco X3 Pro </td>
+                <td> 2000</td>
+                <td> 5 </td>
+            </tr>
 
-        <tr>
-            <td><img src="./img/MI-11.jpg" alt="MI-11"/></td>
-            <td> Xiaomi MI 11 </td>
-            <td> 2300 </td>
-            <td> 10 </td>
-        </tr>
+            <tr>
+                <td><img src="./img/mi-band-5.jpg" alt="mi-band-5" width="130" height="200" /></td>
+                <td> Mi Band 5 </td>
+                <td> 399,00 </td>
+                <td> 7 </td>
+            </tr>
 
-        <tr>
-            <td><img src="./img/poco x3 pro.jpg" alt="poco x3 pro"/></td>
-            <td> Xiaomi Poco X3 Pro </td>
-            <td> 2000</td>
-            <td> 5 </td>
-        </tr>
+            <tr>
+                <td><img src="./img/note-10.jfif" alt="note-10" width="200" height="200"/></td>
+                <td> Xiaomi Note 10 </td>
+                <td> 1350,00 </td>
+                <td> 6 </td>
+            </tr>
 
-        <tr>
-            <td><img src="./img/mi-band-5.jpg" alt="mi-band-5"/></td>
-            <td> Mi Band 5 </td>
-            <td> 399,00 </td>
-            <td> 7 </td>
-        </tr>
+            <tr>
+                <td><img src="./img/poco-f3.jpg" alt="poco-f3" width="200" height="200"/></td>
+                <td> Xiaomi Poco F3 </td>
+                <td> 2650,00 </td>
+                <td> 2 </td>
+            </tr>
+            
+            <!-- Crie mais uma linha desta tabela abaixo \/ -->
 
-        <tr>
-            <td><img src="./img/note-10.jfif" alt="note-10"/></td>
-            <td> Xiaomi Note 10 </td>
-            <td> 1350,00 </td>
-            <td> 6 </td>
-        </tr>
-
-        <tr>
-            <td><img src="./img/poco-f3.jpg" alt="poco-f3"/></td>
-            <td> Xiaomi Poco F3 </td>
-            <td> 2650,00 </td>
-            <td> 2 </td>
-        </tr>
-        
-        <!-- Crie mais uma linha desta tabela abaixo \/ -->
-
-    </table>
-
+        </table>
+    </main>
 </body>
 </html>
