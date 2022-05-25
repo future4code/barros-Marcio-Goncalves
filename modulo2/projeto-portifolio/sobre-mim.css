@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    width: 100%;
+    height: 90vh;
+}
+
+.sobreMim{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "infoMim skills";
+}
+
+.infoMim{
+    grid-area: infoMim;
+    text-align: center;
+    display: flex;
+    flex-direction: column;    
+}
+
+.infoMim p{
+    margin: 0px 50px;
+}
+
+.infoMim button{
+    margin-top: 100px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.infoMim button:hover{
+    color: rgb(96, 122, 240);
+    transition: .3s;
+}
+
+.infoMim p{
+    margin-top: 10px;
+} 
+
+table{
+    margin-top: 30px;
+}
+
+table tr td{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+}
+
+.skills{
+    grid-area: skills;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.skill-base{
+    width:100px;
+    height: 10px;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.skill-JS{
+    width: 70px;
+    height: 10px;
+    background-color: rgb(28, 101, 238);
+    border-radius: 10px;
+}
+.skill-HTML{
+    width: 80px;
+    height: 10px;
+    background-color: rgb(28, 101, 238);
+    border-radius: 10px;
+}
+.skill-CSS{
+    width: 75px;
+    height: 10px;
+    background-color: rgb(28, 101, 238);
+    border-radius: 10px;
+}
+.skill-PHP{
+    width: 20px;
+    height: 10px;
+    background-color: rgb(28, 101, 238);
+    border-radius: 10px;
+}
+
+.skillLayout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

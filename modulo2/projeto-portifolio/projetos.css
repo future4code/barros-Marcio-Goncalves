@@ -1,0 +1,41 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projetos{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.projetos h2{
+    margin-bottom: 20px;
+}
+
+table tr td{
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+
+table tr td a{
+    text-decoration: none;
+    color: black;
+}
+
+table tr td a:hover{
+    transition: .4s;
+    color: rgb(84, 139, 241);
+}

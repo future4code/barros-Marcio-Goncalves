@@ -1,0 +1,4 @@
+@keyframes loading {
+    0%{color: black;}
+    50%{color: rgb(91, 172, 243);}
+}
