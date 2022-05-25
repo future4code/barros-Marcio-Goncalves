@@ -1,0 +1,13 @@
+.container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabela tr td{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./vendas.css">
+    <script src="./index.js" defer></script>
+    <title>Vendas</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="./index.html"><img src="./img/xiaomi.png" alt="xiaomi logo" width="50" height="50"></a></div>
+        <nav class="navigation">
+            <a href="./ctrl-estoque.html">Controle de Estoque</a>
+            <a href="./add-produto.html">Adicionar Produto</a>
+            <a href="./funcionarios.html">Funcionários</a>
+            <a href="./vendas.html">Vendas</a>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="system">
+            <div class="disponivel">
+                <label for="">Verificar a disponibilidade do produto</label>
+                <input type="number" placeholder="Codigo do Produto" id="idProduto">
+                <button onclick="disponivel()">Verificar</button>
+                <div id="display1"></div>
+                <div id="display2"></div>
+            </div>
+            <div class="nomeProduto">
+                <label for="">Digite o nome do produto</label>
+                <input type="text" placeholder="Nome do produto">
+                <button onclick="adicionar()">Adicionar produto</button>
+            </div>
+            <div class="pay">
+                <label>Selecione a forma de pagamento</label>
+                <select name="" id="">
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="cartao">Cartao</option>
+                </select>
+                <button>Finalizar compra</button>                    
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
