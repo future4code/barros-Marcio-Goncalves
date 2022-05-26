@@ -44,10 +44,6 @@
     color: rgb(96, 122, 240);
 }
 
-body{
-    background-color: grey;
-}
-
 .intro{
     height: 90vh;
     display: grid;
@@ -70,21 +66,21 @@ body{
     flex-direction: column;
 }
 
-.box1 h1, h2{
+.box1 h1{
     animation: loading infinite 4s both;
-    
 }
 
 .box1 h1::before{
     content: "";
-    width: 300px;
+    width: 10px;
     height: 5px;
-    background: blue;
+    background: blu;
+    box-shadow: 0px 0px 9px black;
     display: block;
-    margin: 0 auto;
     margin-top: 0px;
     margin-bottom: 2px;
     border-radius: 20px;
+    animation: move infinite linear 10s both;
 }
 
 .photo{
@@ -95,6 +91,7 @@ body{
     background-repeat: no-repeat;
     border-radius: 50%;
     margin-top: 20px;
+    border: 2px solid black;
 }
 
 .bio{
@@ -127,4 +124,5 @@ body{
 
 .box1 h1{
     margin-top: 60px;
+    
 }
