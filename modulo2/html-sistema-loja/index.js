@@ -17,6 +17,20 @@ const disponivel = ()=>{
 //    return document.getElementById("display1").innerHTML = buscar
 }
 
+<<<<<<< projeto-portifolio
 const adicionar = () =>{
    
+=======
+const finalizarCompra = ()=>{
+    document.getElementById("btnFin").disabled = true
+    document.getElementById("loading").style.display = "block"
+    setTimeout(() => {
+        document.getElementById("loading").style.display = "none"
+        document.getElementById("btnFin").disabled = false
+        alert("compra realizada com sucesso")
+        
+        
+    }, 3000);
+    return 
+>>>>>>> local
 }

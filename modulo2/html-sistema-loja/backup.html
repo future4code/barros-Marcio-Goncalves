@@ -1,0 +1,31 @@
+<div class="system">
+    <div class="disponivel">
+        <label for="">Verificar a disponibilidade do produto</label>
+        <input type="number" placeholder="Codigo do Produto" id="idProduto">
+        <button onclick="disponivel()">Verificar</button>
+        <div class="displays">
+            <div class="displayOne">
+                <label for="">Nome do produto</label>
+                <div id="display1"></div>
+            </div>
+            <div class="displayTwo">
+                <label for="">Quantidade disponivel em estoque</label>
+                <div id="display2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="nomeProduto">
+        <button onclick="addCarrinho()">Adicionar produto</button>
+    </div>
+    <div class="pay">
+        <label>Selecione a forma de pagamento</label>
+        <select name="" id="">
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="cartao">Cartao</option>
+        </select>
+        <button onclick="" id="btnFin">Ver Carrinho</button> 
+        <button onclick="finalizarCompra()" id="btnFin">Finalizar compra</button> 
+        <div class="loading" id="loading"></div>                   
+        </div>
+    </div>
+</div>
