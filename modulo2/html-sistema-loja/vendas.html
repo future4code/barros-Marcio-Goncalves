@@ -10,6 +10,7 @@
     <title>Vendas</title>
 </head>
 <body>
+<<<<<<< projeto-portifolio
     <header>
         <div class="logo"><a href="./index.html"><img src="./img/xiaomi.png" alt="xiaomi logo" width="50" height="50"></a></div>
         <nav class="navigation">
@@ -42,6 +43,58 @@
                 <button>Finalizar compra</button>                    
                 </div>
             </div>
+=======
+    <div class="modal">
+        <div class="subModal">
+            <header>
+                <div class="logo"><a href="./index.html"><img src="./img/xiaomi.png" alt="xiaomi logo" width="50" height="50"></a></div>
+                <nav class="navigation">
+                    <a href="./ctrl-estoque.html">Controle de Estoque</a>
+                    <a href="./add-produto.html">Adicionar Produto</a>
+                    <a href="./funcionarios.html">Funcionários</a>
+                    <a href="./vendas.html">Vendas</a>
+                </nav>
+                <div class="menu-mobile"><button><img src="./img/menu.png" alt="" width="20"></button></div>
+            </header>
+            <main class="principal">
+                <main class="telaVendas">
+                    <div class="container">
+                        <div class="system">
+                            <div class="disponivel">
+                                <label for="">Verificar a disponibilidade do produto</label>
+                                <input type="number" placeholder="Codigo do Produto" id="idProduto">
+                                <button onclick="disponivel()">Verificar</button>
+                                <div class="displays">
+                                    <div class="displayOne">
+                                        <label for="">Nome do produto</label>
+                                        <div id="display1"></div>
+                                    </div>
+                                    <div class="displayTwo">
+                                        <label for="">Quantidade disponivel em estoque</label>
+                                        <div id="display2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nomeProduto">
+                                <button onclick="addCarrinho()">Adicionar produto</button>
+                            </div>
+                            <div class="pay">
+                                <label>Selecione a forma de pagamento</label>
+                                <select name="" id="">
+                                    <option value="Dinheiro">Dinheiro</option>
+                                    <option value="cartao">Cartao</option>
+                                </select> 
+                                <button onclick="finalizarCompra()" id="btnFin">Finalizar Compra</button>  
+                                <div class="loading" id="loading"></div>                   
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <main class="carrinho">
+
+                </main>
+            </main>
+>>>>>>> local
         </div>
     </main>
 </body>

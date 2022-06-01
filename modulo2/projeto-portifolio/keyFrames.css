@@ -1,0 +1,10 @@
+@keyframes loading {
+    0%{color: black;}
+    50%{color: rgb(91, 172, 243);}
+}
+
+@keyframes move {
+    0%{transform: translateX(0px);}
+    50%{transform: translateX(400px);}
+    100%{transform: translateX(0px);}
+}

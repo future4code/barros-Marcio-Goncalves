@@ -9,7 +9,17 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< projeto-portifolio
     border-bottom: 1px solid orangered;
+=======
+    background: rgba(246, 246, 248, 0.8);
+    position: sticky;
+    top: 0;
+}
+
+.menu-mobile{
+    display: none;
+>>>>>>> local
 }
 
 .logo{
