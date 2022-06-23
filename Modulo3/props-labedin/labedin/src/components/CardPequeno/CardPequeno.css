@@ -1,0 +1,20 @@
+.SmallCard-Container{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    height: 70px;
+    margin: 10px 0;
+}
+
+.SmallCard-Container h4{
+    margin-left: 10px;
+}
+
+.SmallCard-Container img{
+    width: 30px;
+    margin: 0 5px;
+}
+
+.SmallCard-Container p{
+    margin: 0 5px;
+}
