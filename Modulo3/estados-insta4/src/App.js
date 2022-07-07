@@ -1,35 +1,36 @@
 import React from 'react';
 import Post from './components/Post/Post';
 import './style.css'
-import perfil1 from './img/perfil1.jfif';
-import perfil2 from './img/perfil2.jfif';
-import perfil3 from './img/perfil3.jfif';
-import tecperfil1 from './img/tecperfil1.jpg';
-import tecperfil2 from './img/tecperfil2.jfif';
-import tecperfil3 from './img/tecperfil3.jfif';
-
+import { MainContainer } from "./styledComponents"
 
 function App() {
-return(
-  <div className='MainContainer'>
-           <Post
-            nomeUsuario={'Antonio Nunes'}
-            fotoUsuario={perfil1}
-            fotoPost={tecperfil1}
-          />
-           <Post
-            nomeUsuario={'Poderoso Castiga'}
-            fotoUsuario={perfil2}
-            fotoPost={tecperfil2}
-          />
-           <Post
-            nomeUsuario={'Antenor'}
-            fotoUsuario={perfil3}
-            fotoPost={tecperfil3}
-          />
-  </div>
-)
 
+  const PostList = [
+    {nomeUsuario:'Antonio Nunes',
+    fotoUsuario: "https://picsum.photos/50/49",
+    fotoPost:"https://picsum.photos/50/51",
+    },
+
+    {nomeUsuario:'Poderoso Castiga',
+    fotoUsuario: "https://picsum.photos/50/50",
+    fotoPost:"https://picsum.photos/50/52",
+    },
+
+    {nomeUsuario:'Sr Madruga',
+    fotoUsuario: "https://picsum.photos/50/50",
+    fotoPost:"https://picsum.photos/50/53",
+    },
+  ]
+
+  const PostComponent = PostList.map((valor, index)=>{
+    return(
+      <li key={index}><Post nomeUsuario={valor.nomeUsuario} fotoUsuario={valor.fotoUsuario} fotoPost={valor.fotoPost}/></li>
+    )
+  })
+  console.log(PostList);
+return(
+  <MainContainer><ul>{PostComponent}</ul></MainContainer>
+  )
 }
 
 
