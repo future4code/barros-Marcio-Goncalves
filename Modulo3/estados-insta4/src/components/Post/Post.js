@@ -8,7 +8,6 @@ import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
 function Post(props){
-  
   const [numeroCurtidas, setnumeroCurtidas] = useState (0)
   const [curtido, setCurtido] = useState(false)
   const [comentando, setComentando] = useState(false)
@@ -33,7 +32,7 @@ function Post(props){
   const onClickComentario = () => {
     setComentando(!comentando)
     if(comentando) {
-      componenteComentario = <SecaoComentario 
+      componenteComentario =< SecaoComentario 
       resposta = {mensagem}  
       aoEnviar={aoEnviarComentario}/>
     }
