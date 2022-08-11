@@ -1,8 +1,12 @@
 import React from "react";
 import { LayoutPage } from "../../style";
 import { ButtonCreateTripCamp, CreateTripCamp, InputCreateTripCamp, TittleCreateTripCamp } from "./style";
+import { useNavigate } from "react-router-dom";
 
 function CreateTripPage(){
+
+    const Navigate = useNavigate()
+
     return(
         <LayoutPage>
             <CreateTripCamp>
@@ -35,7 +39,7 @@ function CreateTripPage(){
                     />
                 </InputCreateTripCamp>
                 <ButtonCreateTripCamp>
-                    <button>Voltar</button>
+                    <button onClick={()=>{Navigate('/Admin')}}>Voltar</button>
                     <button>Criar Viagem</button>
                 </ButtonCreateTripCamp>
             </CreateTripCamp>

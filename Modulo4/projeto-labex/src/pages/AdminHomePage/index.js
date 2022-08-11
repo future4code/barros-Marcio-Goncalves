@@ -1,8 +1,12 @@
 import React from "react";
 import { LayoutPage } from "../../style";
 import { ButtonPainelAdmCamp, CardTravel, PainelAdmCamp, TittlePainelAdmCamp, TravelsPainelAdmCamp } from "./style";
+import { useNavigate } from "react-router-dom";
 
 function AdminHomePage(){
+
+    const Navigate = useNavigate()
+
     return(
         <LayoutPage>
             <PainelAdmCamp>
@@ -10,8 +14,8 @@ function AdminHomePage(){
                     <h1>Painel Administrador</h1>
                 </TittlePainelAdmCamp>
                 <ButtonPainelAdmCamp>
-                    <button>Voltar</button>
-                    <button>Criar Viagem</button>
+                    <button onClick={()=>{Navigate("/Login")}}>Voltar</button>
+                    <button onClick={()=>{Navigate("/CriarViagem")}}>Criar Viagem</button>
                     <button>Logout</button>
                 </ButtonPainelAdmCamp>
                 <TravelsPainelAdmCamp>

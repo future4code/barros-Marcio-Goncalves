@@ -46,7 +46,6 @@ export const ButtonPainelAdmCamp = styled.div`
 export const TravelsPainelAdmCamp = styled.div`
     width: 100%;
     height: 80%;
-    background: yellow;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -56,7 +55,6 @@ export const TravelsPainelAdmCamp = styled.div`
 export const CardTravel = styled.div`
     width: 500px;
     height: 100px;
-    background: red;
     margin: 10px 0;
     text-align: center;
 `

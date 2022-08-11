@@ -7,12 +7,14 @@ import ApplicationFormPage from "./ApplicationFormPage/index";
 import ListTripsPage from "./ListTripsPage/index";
 import LoginPage from "./LoginPage/index";
 import TripDetailsPage from "./TripDetailsPage/index";
+import HomePage from "./homePage/index";
 
 function Router(){
     return(
         <BrowserRouter>
             <Routes>
                 <Route index element={<Home/>}/>
+                <Route path='/Home' element={<HomePage/>}/>
                 <Route path='/Admin' element={<AdminPage/>}/>
                 <Route path='/CriarViagem' element={<CreateTripPage/>}/>
                 <Route path='/CadastroDeViagem' element={<ApplicationFormPage/>}/>

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const FormCamp = styled.div`
-    width: 40%;
-    height: 100%;
+    width: 30%;
+    height: 70%;
     background: #141414;
     display: flex;
     justify-content: center;
@@ -84,12 +84,14 @@ export const ButtonCamp = styled.div`
     button{
         width: 150px;
         height: 40px;
+        border: none;
         border-radius: 20px;
         font-weight: bold;
         font-size: 20px;
         background: none;
         cursor: pointer;
         color: white;
+        margin-top: 50px;
         :hover{
             background: #00fff7;
             color: black;

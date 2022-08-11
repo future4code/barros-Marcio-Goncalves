@@ -1,8 +1,10 @@
 import React from "react";
 import { LayoutPage } from "../../style";
 import { ButtonCamp, FormCamp, InputCamp, TittleCamp } from "./style";
+import { useNavigate } from "react-router-dom";
 
 function ApplicationFormPage(){
+    const navigate = useNavigate("")
     return(
         <LayoutPage>
             <FormCamp>
@@ -33,7 +35,7 @@ function ApplicationFormPage(){
                 </select>
             </InputCamp>
             <ButtonCamp>
-                <button>Voltar</button>
+                <button onClick={()=>{navigate("/ListadeViagens")}}>Voltar</button>
                 <button>Enviar</button>
             </ButtonCamp>
             </FormCamp>

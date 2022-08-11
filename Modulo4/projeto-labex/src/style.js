@@ -9,4 +9,8 @@ export const LayoutPage = styled.div`
     align-items: center;
     flex-direction: column;
     color: white;
+    p{
+        color: white;
+    }
 `
+

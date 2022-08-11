@@ -35,6 +35,7 @@ export const FormLoginCamp = styled.div`
         background: none;
         border: none;
         outline: 0;
+        color: white;
         ::placeholder{
             font-weight: bold;
             color: white;
