@@ -8,6 +8,10 @@ export const FormCamp = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media (max-width:700px) {
+            width: 90%;
+            height: 90%;
+        }
 `
 
 export const TittleCamp = styled.div`
@@ -21,6 +25,11 @@ export const TittleCamp = styled.div`
     label{
         color: #00fff7;
     }
+    @media (max-width:700px) {
+            position: relative;
+            bottom: 10px;
+            text-align: center;
+        }
 `
 
 export const InputCamp = styled.div`
@@ -51,6 +60,7 @@ export const InputCamp = styled.div`
         :focus{
             border-bottom: 3px solid #00fff7;
         }
+        
     }
 
     select{
@@ -72,6 +82,19 @@ export const InputCamp = styled.div`
             }
         }
     }
+
+    @media (max-width:700px) {
+            width: 100%;
+            height: 80%;
+            input{
+                ::placeholder{
+                    color:#00fff7;
+                }
+            }
+            select{
+                color:#00fff7;
+            }
+        }
 `
 
 export const ButtonCamp = styled.div`
@@ -99,5 +122,12 @@ export const ButtonCamp = styled.div`
             transition: .4s ease-in-out;
         }
     }
+
+    @media (max-width:700px) {
+            button{
+                position: relative;
+                bottom: 20px;
+            }
+        }
 
 `

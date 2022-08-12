@@ -1,15 +1,29 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { LayoutPage } from "../../style";
 import { ButtonLoginCamp, FormLoginCamp, LoginCamp, TittleLoginCamp } from "./style";
 import { useNavigate } from "react-router-dom";
 import { urlPostLogin } from "../../hooks/url";
-import useRequestLogin from "../../hooks/useRequestLogin";
 
 function LoginPage(){
     const Navigate = useNavigate()
     const [ user, setUser] = useState("")
     const [ password, setPassword] = useState("")
-    const [ data,isLoading, error] = useRequestLogin(urlPostLogin, user, password)
+
+    const logar = ()=>{
+        const body = {
+            email: user,
+            password: password
+        }
+        axios
+            .post(urlPostLogin,body)
+            .then((resp)=>{
+                resp.data.success === true ? Navigate("/Admin") : alert("")
+            })
+            .catch((err)=>{
+                  alert(err.message)
+        })
+}
     
 
     return(
@@ -22,7 +36,7 @@ function LoginPage(){
                     <input
                         value={user}
                         onChange={(ev)=>{setUser(ev.target.value)}} 
-                        type='text'
+                        type='email'
                         placeholder="Digite seu Login"
                     />
                     <input
@@ -34,7 +48,7 @@ function LoginPage(){
                 </FormLoginCamp>
                 <ButtonLoginCamp>
                     <button onClick={()=>{Navigate("/home")}}>Voltar</button>
-                    <button onClick={()=>{Navigate("/Admin")}}>Logar</button>
+                    <button onClick={logar}>Logar</button>
                 </ButtonLoginCamp>
             </LoginCamp>
         </LayoutPage>

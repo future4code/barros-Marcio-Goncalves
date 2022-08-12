@@ -9,28 +9,30 @@ function ListTripsPage(){
     const Navigate = useNavigate()
     const [data,isLoading, error] = useRequesteData(`${urlGetTrips}`)
 
-    const travel = data&&data.map((trip) =>{
+    console.log(data.trips);
+
+    const travels = data.trips&&data.trips.map((trip) =>{
         return (
             <EachListTrips key={trip.id}>
                 <div>
                     <label>Nome:</label>
-                    <label>{trip.name}</label>
+                    <p>{trip.name}</p>
                 </div>
                 <div>
                     <label>Descrição:</label>
-                    <label>{trip.description}</label>
+                    <p>{trip.description}</p>
                 </div>
                 <div>
                     <label>Planeta:</label>
-                    <label>{trip.planet}</label>
+                    <p>{trip.planet}</p>
                 </div>
                 <div>
                     <label>Tempo de viagem:</label>
-                    <label>{trip.durationInDays}</label>
+                    <p>{trip.durationInDays}</p>
                 </div>
                 <div>
                     <label>Data:</label>
-                    <label>{trip.date}</label>
+                    <p>{trip.date}</p>
                 </div>
             </EachListTrips>
         )
@@ -45,7 +47,7 @@ function ListTripsPage(){
                 <MainListTripsCamp>
                     <ListTripsCamp>
                         {isLoading&&<AnimLoading/>}
-                        {!isLoading&&data&&travel}
+                        {!isLoading&&data&&travels}
                         {!isLoading&&!data&error}
                     </ListTripsCamp>
                 </MainListTripsCamp>
@@ -53,7 +55,6 @@ function ListTripsPage(){
                     <button onClick={()=>{Navigate("/Home")}}>voltar</button>
                     <button onClick={()=>{Navigate("/CadastrodeViagem")}}>Inscrever-se</button>
                 </ButtonListTripsCamp>
-
             </ListTripsContainer>
         </LayoutPage>
         
@@ -61,5 +62,3 @@ function ListTripsPage(){
 }
 
 export default ListTripsPage
-
-// {/* <p>{Name}</p> */}

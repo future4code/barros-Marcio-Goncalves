@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const useRequestedata=(url)=>{
-    const [data, setData] = useState(undefined)
+const useRequesteData=(url)=>{
+    const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState("")
 
@@ -11,18 +11,17 @@ const useRequestedata=(url)=>{
         axios
             .get(url)
             .then((resp)=>{
-                setData(resp.data.trips)
+                setData(resp.data)
                 setIsLoading(false)
             })
             .catch((err)=>{
-                console.log(err.message);
                 setIsLoading(false)
                 setError(err)
             })
-    },[url])
+    },[])
 
 
     return [data,isLoading,error];
 }
 
-export default useRequestedata
+export default useRequesteData

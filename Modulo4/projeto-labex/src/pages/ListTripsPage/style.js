@@ -12,6 +12,10 @@ export const ListTripsContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media (max-width : 700px)  {
+        width: 90%;
+        height: 90%;
+    }
 `
 
 export const TittleListTripsCamp = styled.div`
@@ -20,6 +24,12 @@ export const TittleListTripsCamp = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width : 700px)  {
+        h1{
+            position: relative;
+            bottom: 20px;
+        }
+    }
 `
 export const AnimLoading = styled.div`
     width:60px;
@@ -58,6 +68,12 @@ export const ListTripsCamp = styled.div`
     ::-webkit-scrollbar{
         background: none;
     }
+
+    @media (max-width : 700px)  {
+        width: 100%;
+        height: 100%;
+        
+    }
 `
 export const EachListTrips = styled.div`
     width: 90%;
@@ -66,14 +82,22 @@ export const EachListTrips = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
     div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         font-size: 17px;
         label{
             margin: 0 10px;
+            color:#00fff7;
         }
     }
-
+    @media (max-width : 700px)  {
+        width: 90%;
+        height: 100%;
+    }
 `
 
 export const ButtonListTripsCamp = styled.div`
@@ -97,6 +121,14 @@ export const ButtonListTripsCamp = styled.div`
             color: black;
             border: none;
             transition: .4s ease-in-out;
+        }
+    }
+
+    @media (max-width : 700px)  {
+        width: 90%;
+        button{
+            position: relative;
+            top: 0px;
         }
     }
 `
