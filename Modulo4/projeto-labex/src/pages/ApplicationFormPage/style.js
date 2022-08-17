@@ -8,6 +8,7 @@ export const FormCamp = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius:100px ;
     @media (max-width:700px) {
             width: 90%;
             height: 90%;
@@ -22,6 +23,8 @@ export const TittleCamp = styled.div`
     align-items: center;
     font-family: cursive;
     font-size: 20px;
+    position: relative;
+    bottom: 90px;
     label{
         color: #00fff7;
     }

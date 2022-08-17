@@ -77,7 +77,7 @@ export const ListTripsCamp = styled.div`
 `
 export const EachListTrips = styled.div`
     width: 90%;
-    height: 40%;
+    height: 100%;
     background: #141414;
     display: flex;
     justify-content: center;

@@ -8,6 +8,14 @@ export const LoginCamp = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media (max-width : 900px)  {
+        width: 90%;
+        height: 100%;
+    }
+    @media (max-width : 700px)  {
+        width: 90%;
+        height: 80%;
+    }
 `
 
 export const TittleLoginCamp = styled.div`

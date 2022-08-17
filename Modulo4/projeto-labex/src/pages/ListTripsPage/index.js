@@ -7,9 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function ListTripsPage(){
     const Navigate = useNavigate()
-    const [data,isLoading, error] = useRequesteData(`${urlGetTrips}`)
-
-    console.log(data.trips);
+    const [data, isLoading, error] = useRequesteData(`${urlGetTrips}`)
 
     const travels = data.trips&&data.trips.map((trip) =>{
         return (

@@ -8,6 +8,15 @@ export const CreateTripCamp = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 100px;
+    @media (max-width : 1100px)  {
+        width: 90%;
+        height: 100%;
+    }
+    @media (max-width : 700px)  {
+        width: 90%;
+        height: 80%;
+    }
 `
 
 export const TittleCreateTripCamp = styled.div`
@@ -26,6 +35,8 @@ export const InputCreateTripCamp = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    left: 30px;
     input{
         width: 400px;
         height: 30px;
@@ -37,6 +48,7 @@ export const InputCreateTripCamp = styled.div`
         background: none;
         border: none;
         outline: 0;
+        color: white;
         ::placeholder{
             font-weight: bold;
             color: white;
@@ -47,6 +59,9 @@ export const InputCreateTripCamp = styled.div`
         :focus{
             border-bottom: 3px solid #00fff7;
         }
+        @media (max-width : 700px)  {
+        width:70vw;
+    }
     }
 
     input[type='date']{
@@ -56,6 +71,10 @@ export const InputCreateTripCamp = styled.div`
             ::-webkit-calendar-picker-indicator{
             cursor: pointer;
             }
+            
+    @media (max-width : 700px)  {
+        width:70vw;
+    }
         }
 
         
@@ -73,6 +92,9 @@ export const InputCreateTripCamp = styled.div`
         border: none;
         background: none;
         color: white;
+        ::placeholder{
+            color: white;
+        }
         option{
             background: black;
             :hover{
@@ -80,6 +102,9 @@ export const InputCreateTripCamp = styled.div`
                 color: red;
             }
         }
+        @media (max-width : 700px)  {
+        width:70vw;
+    }
     }
 
 `
@@ -98,6 +123,9 @@ export const ButtonCreateTripCamp = styled.div`
         border: none;
         background: none;
         color: white;
+        position: relative;
+        right: 35px;
+        top: 70px;
         :hover{
             background: #00fff7;
             color: black;
