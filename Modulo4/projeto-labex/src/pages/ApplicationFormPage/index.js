@@ -13,13 +13,13 @@ function ApplicationFormPage(){
     const [ body, onChange, clear ] = useForm({trip:"",name:"",age:"",applicationText:"", profession:"", country:"",})
     const [ nameTrip, setNameTrip ]= useState("")
 
-    useEffect(()=>{
-        axios
-            .get(`${BASE_URL}/trip/${localStorage.getItem("idTravel")}`,{headers:{auth:localStorage.getItem("token")}})
-            .then((resp)=>{
-                setNameTrip(resp.data.trip.name);
-            })
-    },[BASE_URL])
+    // useEffect(()=>{
+    //     axios
+    //         .get(`${BASE_URL}/trips/${localStorage.getItem("idTravel")}`)
+    //         .then((resp)=>{
+    //             setNameTrip(resp.data.trip.name);
+    //         })  
+    // },[BASE_URL])
 
     const countries = dataCountries&&dataCountries.map((country, index)=>{
         return(
@@ -42,7 +42,7 @@ function ApplicationFormPage(){
         <LayoutPage>
             <FormCamp>
             <TittleCamp>
-                <h2>{nameTrip}</h2>
+                <h3>{localStorage.getItem("nameTravel")}</h3>
             </TittleCamp>
             <InputCamp>
                 <form onSubmit={sendForm}>

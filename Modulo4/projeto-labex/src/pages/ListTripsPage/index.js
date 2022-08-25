@@ -10,8 +10,9 @@ function ListTripsPage(){
     const Navigate = useNavigate()
     const [data, isLoading, error] = useRequesteData(`${BASE_URL}/trips`) 
 
-    const signUpTrip = (idTrip)=>{
+    const signUpTrip = (idTrip, nameTrip)=>{
         localStorage.setItem("idTravel", idTrip)
+        localStorage.setItem("nameTravel", nameTrip)
         localStorage.setItem("apllyID", idTrip)
         Navigate("/CadastroDeViagem")
     }
@@ -38,7 +39,7 @@ function ListTripsPage(){
                 </EachListTripsText>
                 <EachListTripsBtn>
                     <div>
-                        <img onClick={()=>{signUpTrip(trip.id)}} src={Send}/>
+                        <img onClick={()=>{signUpTrip(trip.id, trip.name)}} src={Send}/>
                     </div>
                 </EachListTripsBtn>
             </EachListTrips>

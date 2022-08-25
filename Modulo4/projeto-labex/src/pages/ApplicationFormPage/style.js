@@ -28,6 +28,9 @@ export const TittleCamp = styled.div`
     label{
         color: #00fff7;
     }
+    h3{
+        color: #00fff7;
+    }
     @media (max-width:700px) {
             position: relative;
             bottom: 10px;
