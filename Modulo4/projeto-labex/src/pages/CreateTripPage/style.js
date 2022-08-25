@@ -3,19 +3,19 @@ import styled from "styled-components";
 export const CreateTripCamp = styled.div`
     width: 25%;
     height: 70%;
-    background: #141414;
+    background: #141415;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 100px;
+    border-radius: 50px;
     @media (max-width : 1100px)  {
         width: 90%;
         height: 100%;
     }
     @media (max-width : 700px)  {
         width: 90%;
-        height: 80%;
+        height: 95%;
     }
 `
 

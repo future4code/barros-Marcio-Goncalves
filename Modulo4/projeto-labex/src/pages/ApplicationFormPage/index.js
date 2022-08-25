@@ -1,65 +1,51 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LayoutPage } from "../../style";
 import { ButtonCamp, FormCamp, InputCamp, TittleCamp } from "./style";
 import { useNavigate } from "react-router-dom";
 import useRequesteData from "../../hooks/useRequestData";
-import { urlApplytoTrip, urlCountries, urlGetTrips, urlPostCreateTrips } from "../../hooks/url";
-import axios from "axios";
+import {BASE_URL, urlCountries} from "../../hooks/url";
 import useForm from "../../hooks/useForm";
-import { clear } from "@testing-library/user-event/dist/clear";
+import axios from "axios";
 
 function ApplicationFormPage(){
     const navigate = useNavigate("")
-    const [ data ] = useRequesteData(urlGetTrips)
     const [ dataCountries ] = useRequesteData(urlCountries)
-    const [ body, onChange, clear ] = useForm({trip:"",name:"",age:"",bio:"", profession:"", country:"",})
+    const [ body, onChange, clear ] = useForm({trip:"",name:"",age:"",applicationText:"", profession:"", country:"",})
+    const [ nameTrip, setNameTrip ]= useState("")
 
-    const travels = data.trips&&data.trips.map((travel)=>{
+    useEffect(()=>{
+        axios
+            .get(`${BASE_URL}/trip/${localStorage.getItem("idTravel")}`,{headers:{auth:localStorage.getItem("token")}})
+            .then((resp)=>{
+                setNameTrip(resp.data.trip.name);
+            })
+    },[BASE_URL])
+
+    const countries = dataCountries&&dataCountries.map((country, index)=>{
         return(
-            <option>{travel.name}</option>
-        )
-    })
-
-    const idTravel = data.trips&&data.trips.map((travel)=>{
-        return travel.id
-    })
-
-
-    const countries = dataCountries&&dataCountries.map((country)=>{
-        return(
-            <option>{country.name}</option>
+            <option key={index}>{country.name}</option>
         )
     })
 
     const sendForm = (ev)=>{
-        // axios
-        //     .post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/marcio-goncalves-barros/trips/0fZl9VVAZxBR5X5eFiOG/apply`, body)
-        //     .then((resp)=>{
-        //         console.log(resp.data.message);
-        //     })
-        //     .catch((err)=>{
-        //         console.log(err.message);
-        //     })
         ev.preventDefault()
-        alert("Tudo certo")
-        clear()
+        axios
+            .post(`${BASE_URL}/trips/${localStorage.getItem("apllyID")}/apply`, body)
+            .then((resp)=>{
+                console.log(resp.data.message);
+            })
+            .catch((err)=>{
+                console.log(err.message);
+            })
     }
     return(
         <LayoutPage>
             <FormCamp>
             <TittleCamp>
-                <h2>Inscreva-se para uma <label>Viagem</label> </h2>
+                <h2>{nameTrip}</h2>
             </TittleCamp>
             <InputCamp>
                 <form onSubmit={sendForm}>
-                    <select
-                        name="trip"
-                        value={body.trip}
-                        onChange={onChange}
-                        required
-                    >
-                        {travels}
-                    </select>
                     <input
                         name="name"
                         value={body.name}
@@ -78,17 +64,17 @@ function ApplicationFormPage(){
                         pattern="^.{3,}"
                     />
                     <input
-                        name="bio"
+                        name="applicationText"
                         placeholder="Apresentação para candidatura"
-                        value={body.bio}
+                        value={body.applicationText}
                         onChange={onChange} 
                         required
                         pattern="^.{30,}"
                     />
                     <input
-                        name="prof"
+                        name="profession"
                         placeholder="Profissão"
-                        value={body.prof}
+                        value={body.profession}
                         onChange={onChange}
                         required 
                         pattern="^.{10,}"

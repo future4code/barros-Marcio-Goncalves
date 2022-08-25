@@ -1,11 +1,12 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { LayoutPage } from "../../style";
 import { ButtonLoginCamp, FormLoginCamp, LoginCamp, TittleLoginCamp } from "./style";
 import { useNavigate } from "react-router-dom";
 import { urlPostLogin } from "../../hooks/url";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 function LoginPage(){
     const Navigate = useNavigate()
@@ -20,16 +21,20 @@ function LoginPage(){
         axios
             .post(urlPostLogin,body)
             .then((resp)=>{
-                console.log(resp.data);
-                resp.data.success === true ? Navigate("/Admin") : alert("")
+                localStorage.setItem("token", resp.data.token)
+                Navigate("/Admin")
+                toast.success("Logado com Sucesso")
             })
             .catch((err)=>{
-                  toast.error(err.message)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: err.response.data.message,
+                  })
         })
-}
+    }
     
-
-    return(
+     return(
         <LayoutPage>
             <LoginCamp>
                 <TittleLoginCamp>

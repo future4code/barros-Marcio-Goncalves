@@ -1,15 +1,16 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useRequesteData=(url, headers)=>{
-    const [data, setData] = useState([])
+
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState("")
+    const [data, setData] = useState([])
+    
 
     useEffect(()=>{
         setIsLoading(true)
-        axios
-            .get(url, headers)
+        axios.get(url, headers)
             .then((resp)=>{
                 setData(resp.data)
                 setIsLoading(false)
@@ -18,10 +19,8 @@ const useRequesteData=(url, headers)=>{
                 setIsLoading(false)
                 setError(err)
             })
-    },[])
-
-
-    return [data,isLoading,error];
+    },[url])
+    return [data, isLoading ,error];
 }
 
 export default useRequesteData

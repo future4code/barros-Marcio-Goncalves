@@ -6,7 +6,7 @@ const animLoading = keyframes`
 `
 
 export const ListTripsContainer = styled.div`
-    width: 40%;
+    width: 70%;
     height: 70%;
     display: flex;
     justify-content: center;
@@ -47,6 +47,7 @@ export const MainListTripsCamp = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    
 `
 export const ListTripsCamp = styled.div`
     width: 95%;
@@ -76,12 +77,13 @@ export const ListTripsCamp = styled.div`
     }
 `
 export const EachListTrips = styled.div`
-    width: 90%;
-    height: 100%;
+    width: 30%;
+    height: 90%;
     background: #141414;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    border-radius: 50px;
+    margin: 10px 0;
     div{
         display: flex;
         flex-direction: column;
@@ -89,15 +91,35 @@ export const EachListTrips = styled.div`
         align-items: center;
         text-align: center;
         font-size: 17px;
-        label{
-            margin: 0 10px;
-            color:#00fff7;
+        p{
+            margin: 10px;
+            font-size: 20px;
         }
     }
     @media (max-width : 700px)  {
         width: 90%;
         height: 100%;
     }
+`
+
+export const EachListTripsText = styled.div`
+    width: 100%;
+    height: 85%;
+    overflow-y: auto;
+`
+
+export const EachListTripsBtn = styled.div`
+    width: 100%;
+    height: 15%;
+    img{
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            :hover{
+                transform: scale(1.1);
+                transition: .4s ease-in-out;
+            }
+        }
 `
 
 export const ButtonListTripsCamp = styled.div`

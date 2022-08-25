@@ -8,6 +8,7 @@ export const LoginCamp = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 50px;
     @media (max-width : 900px)  {
         width: 90%;
         height: 100%;
@@ -53,6 +54,16 @@ export const FormLoginCamp = styled.div`
         }
         :focus{
             border-bottom: 3px solid #00fff7;
+        }
+    }
+    @media (max-width : 500px)  {
+        input{
+            :hover{
+                border-bottom: none;
+            }
+            :focus{
+                border-bottom: none;
+            }
         }
     }
 `

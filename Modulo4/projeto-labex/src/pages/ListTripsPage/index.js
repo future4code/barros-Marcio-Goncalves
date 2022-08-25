@@ -1,37 +1,46 @@
-import React, {useState } from "react";
-import { urlGetTrips } from "../../hooks/url";
+import React from "react";
+import { BASE_URL } from "../../hooks/url";
 import useRequesteData from "../../hooks/useRequestData";
 import { LayoutPage } from "../../style";
-import { AnimLoading, ButtonListTripsCamp, EachListTrips, ListTripsCamp, ListTripsContainer, MainListTripsCamp, TittleListTripsCamp } from "./style";
+import { AnimLoading, ButtonListTripsCamp, EachListTrips, EachListTripsBtn, EachListTripsText, ListTripsCamp, ListTripsContainer, MainListTripsCamp, TittleListTripsCamp } from "./style";
 import { useNavigate } from "react-router-dom";
+import Send from '../../IMG/send.png'
 
 function ListTripsPage(){
     const Navigate = useNavigate()
-    const [data, isLoading, error] = useRequesteData(`${urlGetTrips}`)
+    const [data, isLoading, error] = useRequesteData(`${BASE_URL}/trips`) 
+
+    const signUpTrip = (idTrip)=>{
+        localStorage.setItem("idTravel", idTrip)
+        localStorage.setItem("apllyID", idTrip)
+        Navigate("/CadastroDeViagem")
+    }
 
     const travels = data.trips&&data.trips.map((trip) =>{
         return (
             <EachListTrips key={trip.id}>
-                <div>
-                    <label>Nome:</label>
-                    <p>{trip.name}</p>
-                </div>
-                <div>
-                    <label>Descrição:</label>
-                    <p>{trip.description}</p>
-                </div>
-                <div>
-                    <label>Planeta:</label>
-                    <p>{trip.planet}</p>
-                </div>
-                <div>
-                    <label>Tempo de viagem:</label>
-                    <p>{trip.durationInDays}</p>
-                </div>
-                <div>
-                    <label>Data:</label>
-                    <p>{trip.date}</p>
-                </div>
+                <EachListTripsText>
+                    <div>
+                        <p>{trip.name}</p>
+                    </div>
+                    <div>
+                        <p>{trip.description}</p>
+                    </div>
+                    <div>
+                        <p>{trip.planet}</p>
+                    </div>
+                    <div>
+                        <p>{trip.durationInDays}</p>
+                    </div>
+                    <div>
+                        <p>{trip.date}</p>
+                    </div>
+                </EachListTripsText>
+                <EachListTripsBtn>
+                    <div>
+                        <img onClick={()=>{signUpTrip(trip.id)}} src={Send}/>
+                    </div>
+                </EachListTripsBtn>
             </EachListTrips>
         )
     })
@@ -42,17 +51,16 @@ function ListTripsPage(){
                 <TittleListTripsCamp>
                     <h1>Viagens</h1>
                 </TittleListTripsCamp>
+                <ButtonListTripsCamp>
+                    <button onClick={()=>{Navigate("/Home")}}>voltar</button>
+                </ButtonListTripsCamp>
                 <MainListTripsCamp>
                     <ListTripsCamp>
                         {isLoading&&<AnimLoading/>}
                         {!isLoading&&data&&travels}
-                        {!isLoading&&!data&error}
+                        {!isLoading&&!data&&error}
                     </ListTripsCamp>
                 </MainListTripsCamp>
-                <ButtonListTripsCamp>
-                    <button onClick={()=>{Navigate("/Home")}}>voltar</button>
-                    <button onClick={()=>{Navigate("/CadastrodeViagem")}}>Inscrever-se</button>
-                </ButtonListTripsCamp>
             </ListTripsContainer>
         </LayoutPage>
         

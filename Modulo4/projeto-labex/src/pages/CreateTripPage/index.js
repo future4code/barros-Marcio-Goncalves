@@ -3,16 +3,18 @@ import axios from "axios";
 import { LayoutPage } from "../../style";
 import { ButtonCreateTripCamp, CreateTripCamp, InputCreateTripCamp, TittleCreateTripCamp } from "./style";
 import { useNavigate } from "react-router-dom";
-import { urlGetTrips, urlPostCreateTrips } from "../../hooks/url";
-import useRequesteData from "../../hooks/useRequestData";
+import { urlPostCreateTrips } from "../../hooks/url";
 import useForm from "../../hooks/useForm";
+import Swal from "sweetalert2";
+import { useProtectPage } from "../../hooks/useProtectPage";
 
 function CreateTripPage(){
+    useProtectPage()
     const Navigate = useNavigate()
-    const [dataTrips] = useRequesteData(urlGetTrips)
-    const [ body, onChange, clear] = useForm({name:"", planet:"",date:"",description:"",durationInDays:"",})
+    const [ body, onChange] = useForm({name:"", planet:"",date:"",description:"",durationInDays:"",})
 
-    const sendSubscription = ()=>{
+    const sendSubscription = (ev)=>{
+        ev.preventDefault()
         const myHeaders = {
             headers:{
                 ContentType:"application/json",
@@ -28,6 +30,13 @@ function CreateTripPage(){
             .catch((err)=>{
                 alert(err.message)
             })
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Concluido',
+                text: 'Viagem criada com sucesso!',
+              })    
+              Navigate("/Admin")
     }
     return(
         <LayoutPage>
@@ -56,8 +65,9 @@ function CreateTripPage(){
                             <option>Mercurio</option>
                             <option>Terra</option>
                             <option>Saturno</option>
-                            <option>Neturno</option>
+                            <option>Netuno</option>
                             <option>Via Láctea</option>
+                            <option>Lua</option>
                         </select>
                         <input
                             name="date"

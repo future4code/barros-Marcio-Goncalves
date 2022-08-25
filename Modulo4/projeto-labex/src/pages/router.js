@@ -21,7 +21,6 @@ function Router(){
                 <Route path='/ListaDeViagens' element={<ListTripsPage/>}/>
                 <Route path='/Login' element={<LoginPage/>}/>
                 <Route path='/DetalhesDaViagem' element={<TripDetailsPage/>}/>
-                
             </Routes>
         </BrowserRouter>
     )
