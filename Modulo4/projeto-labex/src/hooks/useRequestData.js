@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 
 const useRequesteData=(url, headers)=>{
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState("")
-    const [data, setData] = useState([])
+    const [ isLoading, setIsLoading] = useState(false)
+    const [ error, setError] = useState("")
+    const [ data, setData] = useState([])
+    const [ page, setPage ]= useState(false) 
     
 
     useEffect(()=>{
@@ -19,8 +20,8 @@ const useRequesteData=(url, headers)=>{
                 setIsLoading(false)
                 setError(err)
             })
-    },[url])
-    return [data, isLoading ,error];
+    },[url, page])
+    return [data, isLoading ,error, page, setPage];
 }
 
 export default useRequesteData

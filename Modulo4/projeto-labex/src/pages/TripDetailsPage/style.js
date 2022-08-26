@@ -64,6 +64,14 @@ export const MainListDetail = styled.div`
     }
 `
 
+export const Render = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+
 export const DetailTripCamp = styled.div`
     width: 99%;
     height: 90%;
@@ -78,6 +86,7 @@ export const EachDetailTrip = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 20px;
+    margin: 20px 0;
     @media (max-width : 500px)  {
         width: 100%;
     }

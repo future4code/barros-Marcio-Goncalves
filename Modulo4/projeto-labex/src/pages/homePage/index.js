@@ -4,6 +4,7 @@ import { HomeContainer, InputHomeCamp, TittleHomeCamp } from "./style";
 import Rocket from '../../IMG/rocket1.png'
 import { useNavigate } from "react-router-dom";
 
+
 function HomePage(){
     const Navigate = useNavigate()
     return(
@@ -15,11 +16,11 @@ function HomePage(){
                     </TittleHomeCamp>
                     <InputHomeCamp>
                         <button onClick={()=>{Navigate("/ListadeViagens")}}>Consultar Viagens</button>
-                        <button onClick={()=>{Navigate("/login")}}>Area Admin</button>
+                        <button onClick={()=>{Navigate("/Admin")}}>Area Admin</button>
                     </InputHomeCamp>
                 </HomeContainer>
         </LayoutPage>
-    )
+    ) 
 }
 
 export default HomePage

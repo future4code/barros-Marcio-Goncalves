@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { LayoutPage } from "../../style";
-import { ButtonEachDetail, ButtonListDetail, DetailTripCamp, EachDetailCamp, EachDetailTrip, ListDetailCamp, MainListDetail, TittleListDetail, CandidatesCamp, EachCandidate } from "./style";
+import { ButtonEachDetail, ButtonListDetail, DetailTripCamp, EachDetailCamp, EachDetailTrip, ListDetailCamp, MainListDetail, TittleListDetail, CandidatesCamp, EachCandidate, Render } from "./style";
 import { useProtectPage } from "../../hooks/useProtectPage";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../hooks/url";
@@ -138,11 +138,15 @@ function TripDetailsPage(){
                 <MainListDetail>
                     <DetailTripCamp>
                     <CandidatesCamp>
+                        <h2>Candidatos aprovados...</h2>
+                        {isLoading&&"...Carregando lista de aprovados"}
                         {listCandidate}
                     </CandidatesCamp>
-                        {isLoading&&<AnimLoading/>}
-                        {!isLoading&&render&&detailTrip}
-                        {!isLoading&&!render&&error}
+                        <Render>
+                            {isLoading&&<AnimLoading/>}
+                            {!isLoading&&render&&detailTrip}
+                            {!isLoading&&!render&&error}
+                        </Render>
                     </DetailTripCamp>
                 </MainListDetail>
             </ListDetailCamp>

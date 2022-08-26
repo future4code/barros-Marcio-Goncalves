@@ -7,28 +7,30 @@ import { urlPostCreateTrips } from "../../hooks/url";
 import useForm from "../../hooks/useForm";
 import Swal from "sweetalert2";
 import { useProtectPage } from "../../hooks/useProtectPage";
+import useRequesteData from "../../hooks/useRequestData";
+import { toast } from "react-toastify";
 
 function CreateTripPage(){
     useProtectPage()
     const Navigate = useNavigate()
     const [ body, onChange] = useForm({name:"", planet:"",date:"",description:"",durationInDays:"",})
+    const [ page, setpage ] = useRequesteData()
 
     const sendSubscription = (ev)=>{
         ev.preventDefault()
         const myHeaders = {
             headers:{
                 ContentType:"application/json",
-                auth:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Im93T2g5ZWo2bW50akZqNUNRMVB4IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE1ODk1NjI5MDh9.aB4dNbTCkToXB7pdzEa-tuMa-QbRQDUd93eva4-cec0"
+                auth:localStorage.getItem("token")
             }
         }
         axios
             .post(urlPostCreateTrips, body, myHeaders)
             .then((resp)=>{
-                console.log(resp.data);
-               
+                Navigate("/Admin")
             })
             .catch((err)=>{
-                alert(err.message)
+                toast.error(err.message)
             })
 
             Swal.fire({
@@ -36,7 +38,6 @@ function CreateTripPage(){
                 title: 'Concluido',
                 text: 'Viagem criada com sucesso!',
               })    
-              Navigate("/Admin")
     }
     return(
         <LayoutPage>

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import { BASE_URL } from "../../hooks/url";
 import useRequesteData from "../../hooks/useRequestData";
 import { LayoutPage } from "../../style";
@@ -6,9 +6,10 @@ import { AnimLoading, ButtonListTripsCamp, EachListTrips, EachListTripsBtn, Each
 import { useNavigate } from "react-router-dom";
 import Send from '../../IMG/send.png'
 
-function ListTripsPage(){
+function ListTripsPage(){ 
     const Navigate = useNavigate()
-    const [data, isLoading, error] = useRequesteData(`${BASE_URL}/trips`) 
+    const [data, isLoading, error] = useRequesteData(`${BASE_URL}/trips`)
+    
 
     const signUpTrip = (idTrip, nameTrip)=>{
         localStorage.setItem("idTravel", idTrip)

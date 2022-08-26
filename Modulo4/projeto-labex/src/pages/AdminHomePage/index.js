@@ -11,25 +11,32 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import ImgDel from "../../IMG/delete.png"
-import ImgList from "../../IMG/list.png"
-import ImgGif from "../../IMG/universo.gif"
+import ImgInfo from "../../IMG/info.png"
 
 function AdminHomePage(){
     useProtectPage();
     const Navigate = useNavigate()
-    const [ data, isLoading, error ] = useRequesteData(`${BASE_URL}/trips`)
-    const [ cont, setCont ] = useState(0)
+    const [ data, isLoading, error, page, setPage ] = useRequesteData(`${BASE_URL}/trips`)
+    const [ cand, setCand ] = useState([])
 
     useEffect(()=>{
+        
+    },[])
+
+    const notify = (id)=>{
         axios
-            .get(`${BASE_URL}/trips`)
+            .get(`${BASE_URL}/trip/${id}`, {headers:{auth:localStorage.getItem("token")}})
             .then((resp)=>{
-                setCont(resp.data.trips.length)
+                console.log(resp.data.trip)
+                Swal.fire({
+                    title: "Detalhes da viagem",
+                    text: ` ${resp.data.trip.planet}, ${resp.data.trip.date},---- ${resp.data.trip.approved.length} candidato(s) aprovados!`,
+                  })
             })
             .catch((err)=>{
-                alert(err.message)
+                toast.error(err.message)
             })
-    },[BASE_URL])
+    }
 
     const detailTrip = (idTrip) => {
         Navigate("/DetalhesDaViagem")
@@ -53,7 +60,8 @@ function AdminHomePage(){
                         auth: localStorage.getItem("token")
                     }})
                     .then((resp)=>{
-                        alert(resp.data);
+                        setPage(!page)
+                        toast(resp.data);
                     })
                     .catch((err)=>{
                         alert(err)
@@ -71,13 +79,13 @@ function AdminHomePage(){
         return (
             <EachTrip key={trip.id}>
                     <div>
-                        <p onClick={()=>{detailTrip(trip.id)}}>{trip.name}</p>
+                        <p onClick={()=>{detailTrip(trip.id)}}>{trip.name}{}</p>
                     </div>
+                    <img src={ImgInfo} onClick={()=>{notify(trip.id)}}/>
                     <img src={ImgDel} onClick={()=>{deleteTrip(trip.id)}}/>
             </EachTrip>
         )
     })
-
     const logout = ()=>{
         Swal.fire({
             title: 'Logout!!',
@@ -94,7 +102,6 @@ function AdminHomePage(){
             }
           })
     }
-    
     return(
         <LayoutPage>
             <PainelAdmCamp>
@@ -105,7 +112,7 @@ function AdminHomePage(){
                     <button onClick={logout}>Logout</button>
                     <button onClick={()=>{Navigate("/CriarViagem")}}>Criar Viagem</button>
                 </ButtonPainelAdmCamp>
-                <CardTravel><h4> {cont} viagens para análise!</h4></CardTravel>
+                <CardTravel></CardTravel>
                 <TravelsPainelAdmCamp>
                     {isLoading&&<AnimLoading/>}
                     {!isLoading&&data&&travels}

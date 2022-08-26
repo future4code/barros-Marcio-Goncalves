@@ -6,20 +6,12 @@ import useRequesteData from "../../hooks/useRequestData";
 import {BASE_URL, urlCountries} from "../../hooks/url";
 import useForm from "../../hooks/useForm";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function ApplicationFormPage(){
     const navigate = useNavigate("")
     const [ dataCountries ] = useRequesteData(urlCountries)
     const [ body, onChange, clear ] = useForm({trip:"",name:"",age:"",applicationText:"", profession:"", country:"",})
-    const [ nameTrip, setNameTrip ]= useState("")
-
-    // useEffect(()=>{
-    //     axios
-    //         .get(`${BASE_URL}/trips/${localStorage.getItem("idTravel")}`)
-    //         .then((resp)=>{
-    //             setNameTrip(resp.data.trip.name);
-    //         })  
-    // },[BASE_URL])
 
     const countries = dataCountries&&dataCountries.map((country, index)=>{
         return(
@@ -29,11 +21,13 @@ function ApplicationFormPage(){
 
     const sendForm = (ev)=>{
         ev.preventDefault()
+        console.log();
         axios
-            .post(`${BASE_URL}/trips/${localStorage.getItem("apllyID")}/apply`, body)
+            .post(`${BASE_URL}/trips/${localStorage.getItem("idTravel")}/apply`, body)
             .then((resp)=>{
-                console.log(resp.data.message);
+                Swal.fire('Parabens... Você acabou de se candidatar para a viagem.. Aguarde nossa análise!!')
             })
+            navigate("/listadeviagens")
             .catch((err)=>{
                 console.log(err.message);
             })
