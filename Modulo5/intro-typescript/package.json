@@ -1,0 +1,19 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "checkSquare": "tsc && node ./build/checkSquare.js ",
+    "printColors": "tsc && node ./build/printColors.js ",
+    "leapYear": "tsc && node ./build/leapYear.js ",
+    "difference": "tsc && node ./build/difference.js "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}
