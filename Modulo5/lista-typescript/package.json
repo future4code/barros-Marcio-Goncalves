@@ -1,0 +1,22 @@
+{
+  "name": "lista-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "exer1": "tsc && node ./build/exercicio1.js",
+    "exer2": "tsc && node ./build/exercicio2.js",
+    "exer3": "tsc && node ./build/exercicio3.js",
+    "exer4": "tsc && node ./build/exercicio4.js",
+    "exer5": "tsc && node ./build/exercicio5.js",
+    "exer6": "tsc && node ./build/exercicio6.js",
+    "exer7": "tsc && node ./build/exercicio7.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}
