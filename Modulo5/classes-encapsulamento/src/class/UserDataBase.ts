@@ -12,6 +12,6 @@ export class UserDataBase{
 
     public async getUsers(){
        const result = await this.connection(TABLE_USERS).select()
-        return result
+        return result 
     }
 }
