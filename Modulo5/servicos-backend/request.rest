@@ -1,0 +1,9 @@
+POST http://localhost:3003/Address
+Content-Type: "application/json"
+
+
+
+###
+
+GET https://viacep.com.br/ws/35457262/json/ 
+Content-Type: "application/json"
